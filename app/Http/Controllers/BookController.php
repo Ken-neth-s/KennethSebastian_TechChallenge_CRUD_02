@@ -34,7 +34,7 @@ class BookController extends Controller
 
         Book::create($request->all());
         // untuk masukin datanya ke data baru
-        return redirect()->route('index')->with('success', 'Buku berhasil ditambahkan');
+        return redirect()->route('index')->with('success', 'Book added');
         // ini untuk biar pas dah kelar input title, author, dan deskripsi dan dah lewat sistem validasinya user bakal keredirect ke halaman utama dimana bisa liat semua buku yang sudah ditambahkan dan jika berhasil akan display message bahwa sudah berhasil menambahkan buku ke sistemnya
     }
 
@@ -64,7 +64,7 @@ class BookController extends Controller
 
         $book->update($request->all());
         // untuk ubah data yang udah ada ke data yg user mau
-        return redirect()->route('index')->with('success', "Buku berhasil diupdate");
+        return redirect()->route('index')->with('success', "Book updated");
         // ini untuk redirect user ke halaman utama lagi pas dah kelar update datanya
     }
 
@@ -72,7 +72,7 @@ class BookController extends Controller
     {
         $book->delete();
         // delete buku
-        return redirect()->route('index')->with('success', "Buku berhasil dihapus");
+        return redirect()->route('index')->with('success', "Book deleted");
         // ini untuk redirect user ke halaman utama habis delete buku yang user mau
     }
 }

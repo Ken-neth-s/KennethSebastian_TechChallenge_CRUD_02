@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Buku</title>
+    <title>Book Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>{{ $book->title }}</h1>
-    <p><strong>Penulis:</strong> {{ $book->author }}</p>
-    <a href="{{ route('index') }}">Kembali ke Halaman Utama</a>
-    {{-- untuk redirect user balik ke halaman utama --}}
-    <a href="{{ route('edit', $book->id) }}">Edit Buku</a>
-    {{-- untuk redirect user jika mau edit bukunya --}}
-    <form action="{{ route('destroy', $book->id) }}" method="POST" style="display:inline;">
-        @csrf
-        @method('DELETE')
-        <button type="submit">Hapus Buku</button>
-    </form>
-    {{-- untuk redirect user jika mau delete bukunya --}}
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="mb-4">Book Details</h2>
+        <div class="card p-4">
+            <h4>{{ $book->title }}</h4>
+            <p><strong>Author:</strong> {{ $book->author }}</p>
+        </div>
+        {{-- ambil dari database dan tunjukin data author --}}
+        <a href="{{ route('index') }}" class="btn btn-primary mt-3">Back</a>
+        {{-- balik ke halaman utama --}}
+    </div>
 </body>
 </html>
